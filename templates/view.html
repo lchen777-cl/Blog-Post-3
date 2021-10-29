@@ -1,0 +1,12 @@
+{% block header %}
+  <h2>{% block title %}Some Cool Messages{% endblock %}</h2>
+  <link rel="stylesheet" href = "{{url_for('static', filename = 'style.css')}}">
+{% endblock %}
+
+{% block content %}
+<br>
+{% autoescape false %}
+  {{ results }}
+{% endautoescape %}
+<br>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% block header %}
+  <h2>{% block title %}Submission{% endblock %}</h2>
+  <link rel="stylesheet" href = "{{url_for('static', filename = 'style.css')}}">
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+      <label for="message">Your message:</label>
+      <br>
+      <input type = "text" name="message" id="message" required>
+      <br>
+      <br>
+      <label for="name">Your name or handle:</label>
+      <br>
+      <input type = "text" name="name" id="name" required>
+      <br>
+      <br>
+      <input type="submit" value="Submit message">
+  </form>
+  {% if name %}
+  {% if message %}
+  <b>Hello {{name}}! Thanks for your submission!</b>
+  {% else %}
+  <b>Hello {{name}}! Do you want to submit a message?</b>
+  {% endif %}
+  {% endif %}
+
+  {% if message %}
+  {% if name %}
+  {% else %}
+  <b>Hello there! Remember to add your name.</b>
+  {% endif %}
+  {% endif %}
+
+{% endblock %}

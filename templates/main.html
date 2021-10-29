@@ -1,0 +1,11 @@
+{% block header %}
+  <h2>{% block title %}A Simple Message Bank{% endblock %}</h2>
+  <link rel="stylesheet" href = "{{url_for('static', filename = 'style.css')}}">
+{% endblock %}
+
+{% block content %}
+	<ul>
+	    <li><a href="/submit">Submit a message</a>
+	    <li><a href="/view">View messages</a></li>
+	</ul>
+{% endblock %}
